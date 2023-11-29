@@ -15,7 +15,7 @@ const App = () => {
   const fetchData = async (query) => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/fetchData?dbQuery=${query}`
+        `https://audio-db-assistant-api.vercel.app/fetchData?dbQuery=${query}`
       );
       setData(response.data);
       setError(null);
