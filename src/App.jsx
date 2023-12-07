@@ -12,10 +12,13 @@ const App = () => {
   const [transcriptDialog, setTranscriptDialog] = useState(null);
   const [isRecording, setIsRecording] = useState(false);
 
+  // let BASE_URL = `https://audio-db-assistant-api.vercel.app`
+  let BASE_URL = `http://localhost:3000`
+
   const fetchData = async (query) => {
     try {
       const response = await axios.get(
-        `https://audio-db-assistant-api.vercel.app/fetchData?dbQuery=${query}`
+        `${BASE_URL}/fetchData?dbQuery=${query}`
       );
       setData(response.data);
       setError(null);
